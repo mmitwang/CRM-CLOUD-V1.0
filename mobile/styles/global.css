@@ -1,0 +1,309 @@
+/* 全局样式重置 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 基础样式 */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+  background-color: #f5f7fa;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 页面容器 */
+.page-container {
+  min-height: 100vh;
+  background-color: #f5f7fa;
+}
+
+/* 导航栏样式 */
+.nav-bar {
+  background-color: #1890ff;
+  color: #fff;
+}
+
+/* 按钮样式增强 */
+.uni-button--primary {
+  background-color: #1890ff;
+  border-color: #1890ff;
+}
+
+.uni-button--primary:active {
+  background-color: #096dd9;
+  border-color: #096dd9;
+}
+
+/* 输入框样式增强 */
+.uni-input {
+  border-radius: 4px;
+}
+
+.uni-input-input:focus {
+  border-color: #1890ff;
+}
+
+/* 列表样式 */
+.uni-list {
+  background-color: #fff;
+}
+
+.uni-list-item {
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.uni-list-item:last-child {
+  border-bottom: none;
+}
+
+/* 卡片样式增强 */
+.uni-card {
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin: 16px;
+  overflow: hidden;
+}
+
+/* 徽章样式 */
+.uni-badge {
+  font-size: 12px;
+  padding: 2px 8px;
+  border-radius: 10px;
+}
+
+.uni-badge--primary {
+  background-color: #1890ff;
+}
+
+.uni-badge--success {
+  background-color: #52c41a;
+}
+
+.uni-badge--warning {
+  background-color: #faad14;
+}
+
+.uni-badge--error {
+  background-color: #ff4d4f;
+}
+
+/* 加载动画 */
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+
+/* 空状态 */
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.empty-state-icon {
+  font-size: 64px;
+  color: #d9d9d9;
+  margin-bottom: 20px;
+}
+
+.empty-state-text {
+  font-size: 16px;
+  color: #999;
+}
+
+/* 错误状态 */
+.error-state {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.error-state-icon {
+  font-size: 64px;
+  color: #ff4d4f;
+  margin-bottom: 20px;
+}
+
+.error-state-text {
+  font-size: 16px;
+  color: #ff4d4f;
+  margin-bottom: 20px;
+}
+
+/* 成功状态 */
+.success-state {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.success-state-icon {
+  font-size: 64px;
+  color: #52c41a;
+  margin-bottom: 20px;
+}
+
+.success-state-text {
+  font-size: 16px;
+  color: #52c41a;
+  margin-bottom: 20px;
+}
+
+/* 表单样式 */
+.form-item {
+  margin-bottom: 20px;
+}
+
+.form-label {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.form-error {
+  font-size: 12px;
+  color: #ff4d4f;
+  margin-top: 4px;
+}
+
+/* 网格布局 */
+.grid {
+  display: grid;
+  gap: 16px;
+  padding: 16px;
+}
+
+.grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* 卡片网格项 */
+.grid-item {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.grid-item-icon {
+  font-size: 32px;
+  margin-bottom: 12px;
+}
+
+.grid-item-title {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.grid-item-value {
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* 底部操作栏 */
+.bottom-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  border-top: 1px solid #f0f0f0;
+  padding: 16px;
+  display: flex;
+  gap: 12px;
+  z-index: 999;
+}
+
+.bottom-bar button {
+  flex: 1;
+}
+
+/* 响应式设计 */
+@media screen and (max-width: 375px) {
+  .uni-card {
+    margin: 12px;
+    padding: 16px;
+  }
+  
+  .grid {
+    padding: 12px;
+    gap: 12px;
+  }
+  
+  .grid-item {
+    padding: 16px;
+  }
+  
+  .grid-item-icon {
+    font-size: 28px;
+  }
+  
+  .grid-item-value {
+    font-size: 18px;
+  }
+  
+  .bottom-bar {
+    padding: 12px;
+  }
+}
+
+/* 动画效果 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* 滚动条样式 */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}

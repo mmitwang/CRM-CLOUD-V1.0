@@ -1,0 +1,123 @@
+/* 全局样式重置 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #333;
+  background-color: #f5f7fa;
+}
+
+/* 主容器样式 */
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 页面容器样式 */
+.page-container {
+  flex: 1;
+  padding: 20px;
+  background-color: #f5f7fa;
+}
+
+/* 卡片样式 */
+.card {
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+/* 标题样式 */
+.page-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #303133;
+}
+
+/* 表单样式 */
+.form-item {
+  margin-bottom: 20px;
+}
+
+/* 按钮组样式 */
+.btn-group {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+/* 表格样式 */
+.table-container {
+  margin-top: 20px;
+}
+
+/* 状态标签样式 */
+.status-tag {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.status-online {
+  background-color: #f0f9eb;
+  color: #67c23a;
+}
+
+.status-offline {
+  background-color: #fef0f0;
+  color: #f56c6c;
+}
+
+.status-warning {
+  background-color: #fdf6ec;
+  color: #e6a23c;
+}
+
+/* 加载动画 */
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+
+/* 错误提示 */
+.error-message {
+  color: #f56c6c;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+/* 成功提示 */
+.success-message {
+  color: #67c23a;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+/* 响应式设计 */
+@media screen and (max-width: 768px) {
+  .page-container {
+    padding: 10px;
+  }
+  
+  .card {
+    padding: 15px;
+  }
+  
+  .btn-group {
+    flex-direction: column;
+  }
+}
