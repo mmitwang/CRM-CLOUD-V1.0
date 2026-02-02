@@ -8,8 +8,13 @@ class Settings(BaseSettings):
     API_V1_STR: str = Field(default="/api/v1")
     
     # 数据库配置
-    # 使用SQLite数据库，无需额外的数据库服务器
-    SQLALCHEMY_DATABASE_URL: str = Field(default="sqlite:///./smart_electric_crm.db")
+    # 使用MySQL数据库
+    # 注意：请确保MySQL服务器已安装并运行，且已创建对应的数据库和用户
+    # 格式：mysql+pymysql://username:password@localhost:3306/database_name
+    SQLALCHEMY_DATABASE_URL: str = Field(default="mysql+pymysql://root:1232321@localhost:3306/smart_electric_crm")
+    
+    # 如果需要使用SQLite数据库，请取消下面一行的注释，并注释掉上面的MySQL配置
+    # SQLALCHEMY_DATABASE_URL: str = Field(default="sqlite:///./smart_electric_crm.db")
     
     # JWT配置
     SECRET_KEY: str = Field(default="your-secret-key-here")
