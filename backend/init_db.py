@@ -5,11 +5,6 @@ from app.models.device import Device
 from app.utils.security import get_password_hash
 from datetime import datetime
 
-# 简化的密码哈希函数，用于测试
-def simple_password_hash(password):
-    """简化的密码哈希函数，仅用于测试"""
-    return f"$2b$12$test_hash_{password[:72]}"
-
 # 创建所有表
 Base.metadata.create_all(bind=engine)
 
@@ -80,13 +75,13 @@ try:
         # 创建默认公司的管理员用户
         admin_default = User(
             email="admin@default.com",
-            password=simple_password_hash("123456"),
+            password=get_password_hash("123456"),
             name="默认管理员",
             role="admin",
             company_id=default_company.id
         )
         db.add(admin_default)
-        print("创建默认公司管理员：admin@default.com@DEFAULT / 123456")
+        print("创建默认公司管理员：admin@default.com / 123456")
     
     # 检查并创建默认公司的普通用户
     user_default = db.query(User).filter(User.email == "user@default.com").first()
@@ -94,13 +89,13 @@ try:
         # 创建默认公司的普通用户
         user_default = User(
             email="user@default.com",
-            password=simple_password_hash("123456"),
+            password=get_password_hash("123456"),
             name="默认普通用户",
             role="user",
             company_id=default_company.id
         )
         db.add(user_default)
-        print("创建默认公司普通用户：user@default.com@DEFAULT / 123456")
+        print("创建默认公司普通用户：user@default.com / 123456")
     
     # 检查并创建默认登录用户
     test_default = db.query(User).filter(User.email == "test@default.com").first()
@@ -108,13 +103,13 @@ try:
         # 创建默认登录用户
         test_default = User(
             email="test@default.com",
-            password=simple_password_hash("123456"),
+            password=get_password_hash("123456"),
             name="默认测试用户",
             role="user",
             company_id=default_company.id
         )
         db.add(test_default)
-        print("创建默认登录用户：test@default.com@DEFAULT / 123456")
+        print("创建默认登录用户：test@default.com / 123456")
     
     # 检查并创建测试公司1的管理员用户
     if test1_company:
@@ -123,13 +118,13 @@ try:
             # 创建测试公司1的管理员用户
             admin_test1 = User(
                 email="admin@test1.com",
-            password=simple_password_hash("123456"),
-            name="测试管理员1",
-            role="admin",
-            company_id=test1_company.id
+                password=get_password_hash("123456"),
+                name="测试管理员1",
+                role="admin",
+                company_id=test1_company.id
             )
             db.add(admin_test1)
-            print("创建测试公司1管理员：admin@test1.com@TEST1 / 123456")
+            print("创建测试公司1管理员：admin@test1.com / 123456")
         
         # 检查并创建测试公司1的普通用户
         user_test1 = db.query(User).filter(User.email == "user@test1.com").first()
@@ -137,13 +132,13 @@ try:
             # 创建测试公司1的普通用户
             user_test1 = User(
                 email="user@test1.com",
-            password=simple_password_hash("123456"),
-            name="测试普通用户1",
-            role="user",
-            company_id=test1_company.id
+                password=get_password_hash("123456"),
+                name="测试普通用户1",
+                role="user",
+                company_id=test1_company.id
             )
             db.add(user_test1)
-            print("创建测试公司1普通用户：user@test1.com@TEST1 / 123456")
+            print("创建测试公司1普通用户：user@test1.com / 123456")
     
     # 检查并创建测试公司2的管理员用户
     if test2_company:
@@ -152,13 +147,13 @@ try:
             # 创建测试公司2的管理员用户
             admin_test2 = User(
                 email="admin@test2.com",
-            password=simple_password_hash("123456"),
-            name="测试管理员2",
-            role="admin",
-            company_id=test2_company.id
+                password=get_password_hash("123456"),
+                name="测试管理员2",
+                role="admin",
+                company_id=test2_company.id
             )
             db.add(admin_test2)
-            print("创建测试公司2管理员：admin@test2.com@TEST2 / 123456")
+            print("创建测试公司2管理员：admin@test2.com / 123456")
         
         # 检查并创建测试公司2的普通用户
         user_test2 = db.query(User).filter(User.email == "user@test2.com").first()
@@ -166,13 +161,13 @@ try:
             # 创建测试公司2的普通用户
             user_test2 = User(
                 email="user@test2.com",
-            password=simple_password_hash("123456"),
-            name="测试普通用户2",
-            role="user",
-            company_id=test2_company.id
+                password=get_password_hash("123456"),
+                name="测试普通用户2",
+                role="user",
+                company_id=test2_company.id
             )
             db.add(user_test2)
-            print("创建测试公司2普通用户：user@test2.com@TEST2 / 123456")
+            print("创建测试公司2普通用户：user@test2.com / 123456")
     
     # 为默认公司添加测试客户
     if default_company:
